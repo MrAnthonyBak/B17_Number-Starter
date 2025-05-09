@@ -9,31 +9,64 @@ class Numbers {
       this.data = data;
     }
   }
+
+
   count() {
     //return the count of numbers in data
+    return this.data.length;
   }
+
+
   printNumbers() {
-    //print the numbers in data
+    //prints the number along with their indexes
+    this.data.forEach((number, index) => {
+      const numbers = console.log(`Index: ${index} - Number: ${number}`)
+    });
   }
+
+
   odds() {
     //return the odd numbers in data
+    const oddNumbers = this.data.filter((number) => number % 2 !== 0);
+    return oddNumbers;
   }
+
+
   evens() {
     //return the even numbers in data
+    const evenNumbers = this.data.filter((number) => number % 2 === 0);
+    return evenNumbers;
   }
+
+
   sum() {
     //return the sum of the numbers
+    const total = this.data.reduce((number, sum) => number + sum, 0);
+    return total;
   }
+
+
   product() {
     //return the product of the numbers
+    const total = this.data.reduce((number, sum) => number * sum, 1);
+    return total;
   }
+
+
   greaterThan(target) {
     //return the numbers greater than the target
+    const greaterThan = this.data.filter((number) => number > target);
+    return greaterThan;
   }
+
+
   howMany(target) {
     //return the count of a given number
+    const howMany = this.data.filter((number) => number === target);
+    return howMany;
   }
 }
+
 
 //Prompt the user for a list of integers separated by commas
 const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
